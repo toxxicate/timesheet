@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
+<style type="text/css">
+</style>
+</head>
+    <body ng-app="timesheetApp">
+
+<div ng-controller="AppCtrl">
+  <md-content>
+    <section layout="row" layout-sm="column" layout-align="center center">
+      <md-tabs md-selected="data.selectedIndex">
+	<md-tab id="personaliaTab" aria-controls="personalia-content">Personalia</md-tab>
+	<md-tab id="timesheetTab" aria-controls="timesheet-content">Timesheets</md-tab>
+	<md-tab id="projectTab" aria-controls="project-content">Projects</md-tab>
+      </md-tabs>
+    </section>
+    <ng-switch on="data.selectedIndex" class="tabpanel-container">
+	<div role="tabpanel" id="personalia-content" aria-labelledby="personaliaTab" ng-switch-when="0">
+		View Personalia	
+	</div>	
+	<div role="tabpanel" id="timesheet-content" aria-labelledby="timesheetTab" ng-switch-when="1">
+		View Timesheet	
+	</div>	
+	<div role="tabpanel" id="projects-content" aria-labelledby="projectTab" ng-switch-when="2">
+		View Projects	
+	</div>	
+    </ng-switch>
+  </md-content>
+</div>
+
+
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="/bower_components/angular-aria/angular-aria.js"></script>
+    <script src="/bower_components/angular-animate/angular-animate.js"></script>
+    <script src="/bower_components/hammerjs/hammer.js"></script>
+    <script src="/bower_components/angular-material/angular-material.js"></script>
+    <script src="/js/controller.js"></script>
+    <script>
+
+        // Include app dependency on ngMaterial
+
+        angular.module( 'timesheetApp', [ 'ngMaterial' ] )
+            .controller('AppCtrl', function($scope) {
+		$scope.data = {
+		selectedIndex : 1
+		};
+		});
+
+    </script>
+
+</body>
+</html>

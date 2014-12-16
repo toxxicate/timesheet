@@ -1,0 +1,7 @@
+angular.module( 'timesheetApp', [ 'ngMaterial' ] )
+	.controller('AppCtrl', function($scope) {
+		$scope.data = {
+		selectedIndex : 1
+	};
+});
+
