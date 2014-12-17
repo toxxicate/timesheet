@@ -3,27 +3,48 @@
 <head>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/angular-material/themes/pink-theme.css">
+	<link rel="stylesheet" href="/css/style.css">
 
 </head>
     <body ng-app="timesheetApp">
+	
 		<div ng-controller="mainController">
-			<md-toolbar>
+		<div layout="row" layout-fill>
+			  <md-toolbar>
 				<div class="md-toolbar-tools">
-					<span>Test App</span>
-					<span flex></span>
-					<md-button>TestKnop</md-button>	
+					<div flex="33">Assign</div>
+					<div flex>
+					  <md-tabs md-selected="data.selectedIndex">
+						<div class="md-header-items-container">
+							<div class="md-header-items">
+								<md-tab ng-repeat="t in tabs"
+										label="{{t.heading}}"
+										md-active="t.active"
+										ui-sref="{{t.stateUrl}}">						
+								</md-tab>
+							</div>
+						</div>
+					</md-tabs>
+					</div>
+					<div flex style="margin-left: auto;">
+						<md-button class="md-fab" aria-label="Profile" style="width: 30px; height: 30px; align: right">
+							<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						</md-button>
+						&nbsp;&nbsp;
+						<md-button class="md-fab md-primary" aria-label="Profile" style="width: 30px; height: 30px; align: right">
+							<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+						</md-button>
+						&nbsp;&nbsp;
+						<md-button class="md-fab md-primary" aria-label="Profile" style="width: 30px; height: 30px; align: right">
+							<span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+						</md-button>
+					</div>
 				</div>
-			</md-toolbar>
-			<div layout="row" layout-align="center-center">
-				<md-tabs md-selected="data.selectedIndex">
-					<md-tab ng-repeat="t in tabs"
-							label="{{t.heading}}"
-							md-active="t.active"
-							ui-sref="{{t.stateUrl}}">						
-					</md-tab>
-				</md-tabs>
-			</div>		
+			  </md-toolbar>
+			</div>
+		
 			<md-content>
 				<ng-switch on="data.selectedIndex" class="tabpanel-container">
 					<div role="tabpanel" id="personalia-content" aria-labelledby="personaliaTab" ng-switch-when="0">
