@@ -16,12 +16,12 @@ $scope.tabs = [
 myControllers.controller("personaliaController", function($scope) {
 		$scope.user = {
 				firstname: "Kevin",
-				lastname: "Devis",
-				telephone: "02 / 687 43 77",
-				cellphone: "0478/23 88 26",
+				lastname: "Le FIsh",
+				telephone: "02 / 1234567",
+				cellphone: "0478/238819",
 				email: "kevin.devis@assign.be",
 				adress : { street: "Klipgaardestraat",
-					   number: "26",
+					   number: "69",
 					   areaCode: "3473",
 					   city: "Waanrode",
 					   country: "België"
