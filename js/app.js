@@ -1,12 +1,29 @@
 angular.module('timesheetApp', [
   'timesheetApp.controllers',
-  'ngRoute',
+  'ui.router',
+  'ui.bootstrap',
   'ngMaterial'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-	when("/personaliaTab", {templateUrl: "partials/personalia.html" , controller: 'mainController'}).
-	when("/timesheetTab", {templateUrl: "partials/timesheet.html", controller: 'mainController'}).
-	when("/projectTab", {templateUrl: "partials/project.html", controller: 'mainController'}).
-	otherwise({redirectTo: '/'});
+config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
+	$urlRouterProvider.otherwise("timesheetView");
+
+	$stateProvider.
+		state('personaliaState', {
+			url: "/",
+			views: {
+				"personaliaView": {templateUrl: "partials/personalia.html"}	
+			}
+		}).
+		state('timesheetState', {
+			url: "/",
+			views: {
+				"timesheetView": {templateUrl: "partials/timesheet.html"}	
+			}
+		}).
+		state('projectState', {
+			url: "/",
+			views: {
+				"projectView": {templateUrl: "partials/project.html"}	
+			}
+		});
 }]);

@@ -1,0 +1,25 @@
+<div ng-controller="personaliaController" layout="column">
+	<md-content class="md-padding" md-theme="grey">
+		<section layout="row" layout-sm="column" layout-align="center center">
+			<md-text-float label="Naam" ng-model="user.lastname"></md-text-float>
+			<md-text-float label="Voornaam" ng-model="user.firstname"></md-text-float>
+		</section>
+	</md-content>
+	<md-content class="md-padding">
+		<section layout="row" layout-sm="column" layout-align="center center">
+			<md-text-float label="Straat" ng-model="user.adress.street"> 	</md-text-float>
+			<md-text-float label="Huisnummer" ng-model="user.adress.number"> 	</md-text-float>
+		</section>
+		<section layout="row" layout-sm="column" layout-align="center center">
+			<md-text-float label="Postcode" ng-model="user.adress.areaCode"></md-text-float>
+			<md-text-float label="Stad" ng-model="user.adress.city"></md-text-float>
+		</section>
+		<section layout="row" layout-sm="column" layout-align="center center">
+			<md-text-float label="Telefoon" ng-model="user.telephone"></md-text-float>
+			<md-text-float label="Gsm" ng-model="user.cellphone"></md-text-float>
+			<md-text-float label="Email" ng-model="user.email" type="email"></md-text-float>
+			<md-text-float label="Gsm" ng-model="user.cellphone"></md-text-float>
+			<md-text-float label="Gsm" ng-model="user.cellphone"></md-text-float>
+		</section>
+	</md-content>
+</div>
