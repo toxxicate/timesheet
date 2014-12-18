@@ -5,8 +5,8 @@
 </div>
 
 <div layout="column" layout-fill ng-controller="timesheetController">
-	<md-content layout="column" layout-align="space-around center">
-		<div class="md-padding" layout="column">
+	<md-content layout="row" layout-align="space-around center" flex>
+		<div  flex class="md-padding" layout="column">
 			<md-list>
 			      <md-item ng-repeat="item in timesheets">
 					<md-card>
@@ -27,7 +27,29 @@
 						</md-item-content>
 					</md-card>
 			      </md-item>
-					
+			</md-list>
+		</div>
+		<div flex class="md-padding"  layout="column">
+			<md-list>
+			      <md-item ng-repeat="item in timesheets">
+					<md-card>
+						<md-item-content>
+						  <div  class="md-tile-left">
+						    <img ng-src="{{item.image}}" class="imageTimesheet" alt="{{item.employee}}">
+						 </div>
+						 <div class="md-tile-content">
+						    <h3>{{item.month}} {{item.year}}</h3>
+						    <h4>{{item.employee}}</h4>
+						    <p>
+						      {{item.comments}}
+						    </p>
+						 </div>		
+						<div  class="md-tile-right" layout="center">		
+							<p ng-style="{color:'green'}">{{item.status}}</p>
+						</div>
+						</md-item-content>
+					</md-card>
+			      </md-item>
 			</md-list>
 		</div>
 	</md-content>
