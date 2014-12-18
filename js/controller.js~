@@ -16,12 +16,12 @@ $scope.tabs = [
 myControllers.controller("personaliaController", function($scope) {
 		$scope.user = {
 				firstname: "Kevin",
-				lastname: "Devis",
-				telephone: "02 / 687 43 77",
-				cellphone: "0478/23 88 26",
+				lastname: "Le FIsh",
+				telephone: "02 / 1234567",
+				cellphone: "0478/238819",
 				email: "kevin.devis@assign.be",
 				adress : { street: "Klipgaardestraat",
-					   number: "26",
+					   number: "69",
 					   areaCode: "3473",
 					   city: "Waanrode",
 					   country: "België"
@@ -40,30 +40,76 @@ myControllers.controller("datepickerController", function($scope) {
 		$scope.dt = null;
 	};
 
-  // Disable weekend selection
-  $scope.disabled = function(date, mode) {
-    return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
-  };
+	// Disable weekend selection
+	$scope.disabled = function(date, mode) {
+		return ( mode === 'day' && ( date.getDay() === 0 || date.getDay() === 6 ) );
+	};
 
-  $scope.toggleMin = function() {
-    $scope.minDate = $scope.minDate ? null : new Date();
-  };
-  $scope.toggleMin();
+	$scope.toggleMin = function() {
+		$scope.minDate = $scope.minDate ? null : new Date();
+	};
+	
+	$scope.toggleMin();
 
-  $scope.open = function($event) {
-    $event.preventDefault();
-    $event.stopPropagation();
+	$scope.open = function($event) {
+		$event.preventDefault();
+		$event.stopPropagation();
 
-    $scope.opened = true;
-  };
+		$scope.opened = true;
+	};
 
-  $scope.dateOptions = {
-    formatYear: 'yy',
-    startingDay: 1
-  };
+	$scope.dateOptions = {
+		formatYear: 'yy',
+		startingDay: 1
+	};
 
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
-  $scope.format = $scope.formats[0];
+	$scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+	$scope.format = $scope.formats[0];
+});
+
+myControllers.controller("timesheetController", function($scope) { 
+$scope.status = 'green';
+$scope.timesheets = [{
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'December',
+      year: '2014',
+      status: 'Submitted',
+      comments: ""
+    }, {
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'November',
+      year: '2014',
+      status: 'Approved',
+      comments: ""
+    }, {
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'Oktober',
+      year: '2014',
+      status: 'Approved',
+      comments: ""
+    }, {
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'September',
+      year: '2014',
+      status: 'Approved',
+      comments: ""
+    }, {
+     image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'Augustus',
+      year: '2014',
+      status: 'Approved',
+      comments: "Extreem lange comment die normaal niet op 1 lijn zou mogen komen, maar het toch gaat doen om 1 of andere duistere reden"
+    }];
 });
 
 

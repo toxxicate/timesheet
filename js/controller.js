@@ -67,4 +67,49 @@ myControllers.controller("datepickerController", function($scope) {
 	$scope.format = $scope.formats[0];
 });
 
+myControllers.controller("timesheetController", function($scope) { 
+$scope.status = 'green';
+$scope.timesheets = [{
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'December',
+      year: '2014',
+      status: 'Submitted',
+      comments: ""
+    }, {
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'November',
+      year: '2014',
+      status: 'Approved',
+      comments: ""
+    }, {
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'Oktober',
+      year: '2014',
+      status: 'Approved',
+      comments: ""
+    }, {
+      image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'September',
+      year: '2014',
+      status: 'Approved',
+      comments: ""
+    }, {
+     image: '/img/list/60.jpeg',
+      customer: 'Cegeka',
+      employee: 'Kevin le Fish',
+      month: 'Augustus',
+      year: '2014',
+      status: 'Approved',
+      comments: "Extreem lange comment die"
+    }];
+});
+
 
