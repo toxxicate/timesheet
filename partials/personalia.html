@@ -1,27 +1,32 @@
 <div ng-controller="personaliaController" layout="column">
-	<md-content class="md-paddin">
+
+	<md-content class="md-padding">
+	<md-whiteframe class="md-whiteframe-z2" layout="column">
+	
 		<section layout="row" layout-sm="column" layout-align="center center">
+		<div  class="md-tile-left">
+		<md-subheader class="md-primary">Algemeen</md-subheader>
+		</div>
+		<div flex layout="row" layout-align="space-around center" class="md-tile-content">
 			<md-text-float class="md-pink-theme" label="Naam" ng-model="user.lastname"></md-text-float>
 			<md-text-float class="md-pink-theme" label="Voornaam" ng-model="user.firstname"></md-text-float>
-		</section>
-	</md-content>
-	<md-content class="md-padding">
-		<section layout="row" layout-sm="column" layout-align="center center">
-			<md-text-float class="md-pink-theme" label="Straat" ng-model="user.adress.street"> 	</md-text-float>
-			<md-text-float class="md-pink-theme" label="Huisnummer" ng-model="user.adress.number"> 	</md-text-float>
-			<div class="label">raised</div>
-		</section>
-		<section layout="row" layout-sm="column" layout-align="center center">
-			<md-text-float class="md-pink-theme" label="Postcode" ng-model="user.adress.areaCode"></md-text-float>
-			<md-text-float class="md-pink-theme" label="Stad" ng-model="user.adress.city"></md-text-float>
-		</section>
-		<section layout="row" layout-sm="column" layout-align="center center">
 			<md-text-float class="md-pink-theme" label="Telefoon" ng-model="user.telephone"></md-text-float>
 			<md-text-float class="md-pink-theme" label="Gsm" ng-model="user.cellphone"></md-text-float>
 			<md-text-float class="md-pink-theme" label="Email" ng-model="user.email" type="email"></md-text-float>
-			<md-text-float class="md-pink-theme" label="Datum"></md-text-float>
-			<md-text-float class="md-pink-theme" label="Gsm" ng-model="user.cellphone"></md-text-float>
-			<md-text-float class="md-pink-theme" label="Gsm" ng-model="user.cellphone"></md-text-float>
+			</div>
 		</section>
+		<section layout="row" layout-sm="column" layout-align="center center">
+		<div  class="md-tile-left">
+		<md-subheader class="md-primary">Adres</md-subheader>
+		</div>
+		<div flex layout="row" layout-align="space-around center" class="md-tile-content">
+			<md-text-float class="md-pink-theme" label="Straat" ng-model="user.adress.street"> 	</md-text-float>
+			<md-text-float class="md-pink-theme" label="Huisnummer" ng-model="user.adress.number"> 	</md-text-float>
+			<md-text-float class="md-pink-theme" label="Postcode" ng-model="user.adress.areaCode"></md-text-float>
+			<md-text-float class="md-pink-theme" label="Stad" ng-model="user.adress.city"></md-text-float>
+		</div>	
+		</section>
+		</md-whiteframe>
 	</md-content>
+	
 </div>

@@ -28,7 +28,7 @@
 						</div>
 					</md-tabs>
 					</div>
-					<div flex style="margin-left: auto;">
+					<div flex layout="row" layout-align="end end">
 						<md-button class="md-fab" aria-label="Profile" style="width: 30px; height: 30px; align: right">
 							<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
 						</md-button>
@@ -43,6 +43,12 @@
 					</div>
 				</div>
 			  </md-toolbar>
+			</div>
+			<div ng-controller="datepickerController">
+				<md-content>
+					<pre><em>{{dt | date:'fullDate' }} <span style="float: right;">welcome, Kevin</span></em></pre>
+					
+				</md-content>
 			</div>
 		
 			<md-content>
